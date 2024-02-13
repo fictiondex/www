@@ -1,47 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fictiondex</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #000;
-  }
-
-  .container {
-    text-align: center;
-    padding: 20px;
-    background-color: rgb(17, 24, 39);
-    border-radius: 2px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .title {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: rgb(229, 231, 235);
-  }
-
-  .subtitle {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 18px;
-    color: rgb(156, 163, 175);
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fictiondex - Where Stories Live</title>
+    <!-- 𓅞 𓅞 𓅞 -->
 </head>
+<style>
+/* Include Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Baskerville', serif;
+    color: #333333;
+    /* background-color: #f8fafc; */
+    background-image: url('https://github.com/fictiondex/www/blob/main/apper.png?raw=true'); 
+    background-repeat: repeat; 
+    background-size: 19em;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 80px;
+}
+
+header {
+    background: #ffffff;
+    padding: 0px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* Updated position for z-index */
+    z-index: 1; /* Ensure the shadow appears correctly */
+}
+
+header h2, #hero h2, #about h2, #subscribe h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: #374151;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #34a831;
+}
+
+#hero {
+    background: #ffffff;
+    padding: 60px 0;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+    border-bottom: 1px solid #e6ebf1;
+}
+
+#subscribe form {
+    margin-top: 20px;
+}
+
+#subscribe input[type=email], #subscribe button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#subscribe button {
+    background-color: #34a831;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+footer {
+    background: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Libre Baskerville', serif; /* Set footer text to Baskerville */
+    font-size: smaller;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+@media (min-width: 768px) {
+    .footer-column {
+        flex-direction: row; /* Adjust to row for larger screens */
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-column > * {
+        margin-right: 20px; /* Add spacing between items in the column */
+    }
+}
+
+/* Adjust spacing for last item in each footer column */
+.footer-column > *:last-child {
+    margin-right: 0;
+}
+
+.features-images {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center-align items horizontally in the container */
+
+}
+
+.features-images img {
+    width: 100%; /* Ensure images take the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area of the container without losing aspect ratio */
+    margin-bottom: 40px; /* Add some space between the images */
+    max-width: 700px;
+    border: 2px solid #34a831;
+}
+
+/* Ensure the last image does not have a bottom margin */
+.features-images img:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .features-images img {
+        max-height: 300px; /* Optional: Set a max height for smaller screens */
+    }
+}
+
+
+
+</style>
 <body>
-  <div class="container">
-    <div class="title">Fictiondex</div>
-    <div class="subtitle">Printing soon...</div>
-  </div>
+    <header>
+        <div class="container header-container">
+            <img src="https://github.com/fictiondex/www/blob/main/fictiondex_logo.png?raw=true" alt="Fictiondex Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#subscribe">Join Beta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Discover, Read, and Publish Incredible Stories</h2>
+                <p>Fictiondex is a mobile storytelling platform that makes it easy for our readers to find and enjoy stories, while ensuring authors and publishers get paid for their work.</p>
+                <p><strong>Join our closed beta and be among the first to experience the future of storytelling.</strong></p>
+            </div>
+        </section>
+        <section id="features">
+            <div class="container">
+              
+                <div class="features-images">
+                    <h2>Feature Overview</h2>
+                    <img src="https://github.com/fictiondex/www/blob/main/chart1.png?raw=true" alt="Feature 1">
+                    <img src="https://github.com/fictiondex/www/blob/main/chart2.png?raw=true" alt="Feature 2">
+                </div>
+                <!-- <p>Pa</p> -->
+            </div>
+        </section>
+        <section id="about" >
+            <div class="container">
+                <h2>About Us</h2>
+                <p>At Fictiondex, our mission is to empower authors and elevate global literacy. As a mobile and web app marketplace, we enable writers and publishers to distribute their works and provide readers with a unique discovery experience through micro-transactions.</p>
+                <p>In addition to our digital offerings, we collaborate with local book printers to produce sustainable, high-quality books on demand, supporting local artisans in the process.</p>
+                <p> To further assist authors, we provide a suite of free resources, including self-editing tutorials, character and world-building guides, monetization strategies, marketing tips, and access to public domain fiction for inspiration.</p>
+            </div>
+        </section>
+        <section id="subscribe" style="padding-bottom:4em;">
+            <div class="container" >
+                <h2>Join Beta</h2>
+                <p>We'll let you know when we open up more invitations.</p>
+                <form action="http://eepurl.com/hVHKU5" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <footer style="box-shadow: -1px -1px 4px rgba(0,0,0,0.1)">
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="https://github.com/fictiondex/www/blob/main/fictiondex_logo_no_text.png?raw=true" style="width:60px;" alt="Fictiondex Logo" class="logo-footer">
+                <p>© 2024 Fictiondex Inc.</p>
+            </div>
+            <div class="footer-column">
+                <p>18 King Street East, Suite 1400, Toronto, ON, M5C 1C4</p>
+                <a href="mailto:hello@fictiondex.com">hello@fictiondex.com</a>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
