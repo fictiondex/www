@@ -7,7 +7,6 @@
     <!-- 𓅞 𓅞 𓅞 -->
 </head>
 <style>
-/* Include Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 
 body, html {
@@ -15,10 +14,10 @@ body, html {
     padding: 0;
     font-family: 'Libre Baskerville', serif;
     color: #333333;
-    /* background-color: #f8fafc; */
-    background-image: url('https://fictiondex.com/apper.png'); 
+    background-color: #f8fafc;
+    /* background-image: url('https://fictiondex.com/apper.png'); 
     background-repeat: repeat; 
-    background-size: 19em;
+    background-size: 19em; */
     line-height: 1.6;
 }
 
@@ -42,8 +41,8 @@ header {
     background: #ffffff;
     padding: 0px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative; /* Updated position for z-index */
-    z-index: 1; /* Ensure the shadow appears correctly */
+    position: relative;
+    z-index: 1;
 }
 
 header h2, #hero h2, #about h2, #subscribe h2 {
@@ -104,7 +103,7 @@ footer {
     background: #ffffff;
     text-align: center;
     padding: 20px 0;
-    font-family: 'Libre Baskerville', serif; /* Set footer text to Baskerville */
+    font-family: 'Libre Baskerville', serif;
     font-size: smaller;
 }
 
@@ -112,7 +111,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap;
 }
 
 .footer-column {
@@ -125,44 +124,43 @@ footer {
 
 @media (min-width: 768px) {
     .footer-column {
-        flex-direction: row; /* Adjust to row for larger screens */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
     }
     .footer-column > * {
-        margin-right: 20px; /* Add spacing between items in the column */
+        margin-right: 20px;
     }
 }
 
-/* Adjust spacing for last item in each footer column */
 .footer-column > *:last-child {
     margin-right: 0;
 }
 
 .features-images {
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack images vertically */
-    align-items: center; /* Center-align items horizontally in the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .features-images img {
-    width: 100%; /* Ensure images take the full width of their container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area of the container without losing aspect ratio */
-    margin-bottom: 40px; /* Add some space between the images */
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+    margin-bottom: 40px;
     max-width: 700px;
     border: 2px solid #34a831;
+    border-radius: 0.3em;
 }
 
-/* Ensure the last image does not have a bottom margin */
 .features-images img:last-child {
     margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
     .features-images img {
-        max-height: 300px; /* Optional: Set a max height for smaller screens */
+        max-height: 300px; 
     }
 }
 
